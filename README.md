@@ -1,4 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+wip repo for bootstrapping ethGlobal hackathons
+
+Gameplan
+- Vercel
+- Chakra
+- Rainbow kit
+- Setup foundry or hardhat in here
+- buttons and components for smart contracts functions based on ABI
+- Some simple components for displaying NFTs and ERC20 tokens
+- Iterate a bit each hackathon
 
 ## Getting Started
 
