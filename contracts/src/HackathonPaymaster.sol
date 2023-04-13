@@ -6,7 +6,7 @@ pragma solidity ^0.8.19;
 import "../lib/account-abstraction/contracts/core/BasePaymaster.sol";
 
 // Sample Paymaster Contract
-contract CustomPaymaster is BasePaymaster {
+contract HackathonPaymaster is BasePaymaster {
     using UserOperationLib for UserOperation;
 
     address public immutable verifyingSigner;
