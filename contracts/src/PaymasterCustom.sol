@@ -21,8 +21,6 @@ contract CustomPaymaster is BasePaymaster {
         override
         returns (bytes memory context, uint256 deadline)
     {
-        //no need for other on-chain validation: entire UserOp should have been checked
-        // by the external service prior to signing it.
         return ("", 0);
     }
 }

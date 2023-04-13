@@ -15,15 +15,22 @@ You can find an RPC url on our [alchemy page](https://www.alchemy.com/)
 
 **Make sure to grab a RPC url that corresponds to the chain you want to deploy to**
 
-Then run
+Load the env
 
-```forge create <CONTRACT NAME> --contracts src/<FILE NAME> --private-key <DEPLOYER PRIVATE KEYS> --rpc-url <RPC URL>```
+```
+source .env
+```
 
-## Verifying Contract on Etherscan
+Deploy and verify the contract
 
-Run the following command, you'll need an etherscan api key which can be obtained for free on [their site](https://etherscan.io/apis).
-
-```forge verify-contract --chain-id <CHAIN ID> --num-of-optimizations 1000000 --compiler-version v0.8.13+commit.abaa5c0e <CONTRACT ADDRESS> src/<FILE NAME>:<CONTRACT NAME> <ETHERSCAN API KEY>```
+```
+forge create --rpc-url $GOERLI_RPC_URL \
+    --constructor-args "Arg1" 2 3 \
+    --private-key $PRIVATE_KEY \
+    --etherscan-api-key $ETHERSCAN_API_KEY \
+    --verify \
+    src/Hackathon721.sol:Hackathon721
+```
 
 ## Testing Contracts
 
