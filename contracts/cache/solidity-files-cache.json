@@ -11,6 +11,262 @@
     ]
   },
   "files": {
+    "lib/account-abstraction/contracts/core/BasePaymaster.sol": {
+      "lastModificationDate": 1681360719570,
+      "contentHash": "25b32f890f0b19f31cec3b8fe553538c",
+      "sourceName": "lib/account-abstraction/contracts/core/BasePaymaster.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/account-abstraction/contracts/interfaces/IAggregator.sol",
+        "lib/account-abstraction/contracts/interfaces/IEntryPoint.sol",
+        "lib/account-abstraction/contracts/interfaces/IPaymaster.sol",
+        "lib/account-abstraction/contracts/interfaces/IStakeManager.sol",
+        "lib/account-abstraction/contracts/interfaces/UserOperation.sol",
+        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol"
+      ],
+      "versionRequirement": "^0.8.12",
+      "artifacts": {
+        "BasePaymaster": {
+          "0.8.19+commit.7dd6d404.Darwin.appleclang": "BasePaymaster.sol/BasePaymaster.json"
+        }
+      }
+    },
+    "lib/account-abstraction/contracts/interfaces/IAggregator.sol": {
+      "lastModificationDate": 1681360101614,
+      "contentHash": "49c1115d925cb53220427117e868095d",
+      "sourceName": "lib/account-abstraction/contracts/interfaces/IAggregator.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/account-abstraction/contracts/interfaces/UserOperation.sol"
+      ],
+      "versionRequirement": "^0.8.12",
+      "artifacts": {
+        "IAggregator": {
+          "0.8.19+commit.7dd6d404.Darwin.appleclang": "IAggregator.sol/IAggregator.json"
+        }
+      }
+    },
+    "lib/account-abstraction/contracts/interfaces/IEntryPoint.sol": {
+      "lastModificationDate": 1681360101615,
+      "contentHash": "e746f26089efbafc5efafa7aaa7de180",
+      "sourceName": "lib/account-abstraction/contracts/interfaces/IEntryPoint.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/account-abstraction/contracts/interfaces/IAggregator.sol",
+        "lib/account-abstraction/contracts/interfaces/IStakeManager.sol",
+        "lib/account-abstraction/contracts/interfaces/UserOperation.sol"
+      ],
+      "versionRequirement": "^0.8.12",
+      "artifacts": {
+        "IEntryPoint": {
+          "0.8.19+commit.7dd6d404.Darwin.appleclang": "IEntryPoint.sol/IEntryPoint.json"
+        }
+      }
+    },
+    "lib/account-abstraction/contracts/interfaces/IPaymaster.sol": {
+      "lastModificationDate": 1681360101615,
+      "contentHash": "18d60c096f4f507b335a2c3ba2ee8eb6",
+      "sourceName": "lib/account-abstraction/contracts/interfaces/IPaymaster.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/account-abstraction/contracts/interfaces/UserOperation.sol"
+      ],
+      "versionRequirement": "^0.8.12",
+      "artifacts": {
+        "IPaymaster": {
+          "0.8.19+commit.7dd6d404.Darwin.appleclang": "IPaymaster.sol/IPaymaster.json"
+        }
+      }
+    },
+    "lib/account-abstraction/contracts/interfaces/IStakeManager.sol": {
+      "lastModificationDate": 1681360101615,
+      "contentHash": "4f75ece9465a22a251456b1c9028625d",
+      "sourceName": "lib/account-abstraction/contracts/interfaces/IStakeManager.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.12",
+      "artifacts": {
+        "IStakeManager": {
+          "0.8.19+commit.7dd6d404.Darwin.appleclang": "IStakeManager.sol/IStakeManager.json"
+        }
+      }
+    },
+    "lib/account-abstraction/contracts/interfaces/UserOperation.sol": {
+      "lastModificationDate": 1681360101615,
+      "contentHash": "2e8cedbe9c702b39e675f4cef617d4f0",
+      "sourceName": "lib/account-abstraction/contracts/interfaces/UserOperation.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.12",
+      "artifacts": {
+        "UserOperationLib": {
+          "0.8.19+commit.7dd6d404.Darwin.appleclang": "UserOperation.sol/UserOperationLib.json"
+        }
+      }
+    },
     "lib/forge-std/lib/ds-test/src/test.sol": {
       "lastModificationDate": 1680475932242,
       "contentHash": "abdafe4b187f548ef0145173f5b93247",
@@ -956,8 +1212,8 @@
       }
     },
     "src/Hackathon721.sol": {
-      "lastModificationDate": 1680477348298,
-      "contentHash": "5097d3693e4416876bbfbd497ddb1400",
+      "lastModificationDate": 1681361402180,
+      "contentHash": "35451970511bb7256368f1d765fb4fe5",
       "sourceName": "src/Hackathon721.sol",
       "solcConfig": {
         "settings": {
@@ -992,16 +1248,65 @@
         "lib/openzeppelin-contracts/contracts/utils/Context.sol",
         "lib/solmate/src/tokens/ERC721.sol"
       ],
-      "versionRequirement": "^0.8.13",
+      "versionRequirement": "^0.8.19",
       "artifacts": {
         "Hackathon721": {
           "0.8.19+commit.7dd6d404.Darwin.appleclang": "Hackathon721.sol/Hackathon721.json"
         }
       }
     },
+    "src/PaymasterCustom.sol": {
+      "lastModificationDate": 1681361445769,
+      "contentHash": "b19c4b985e86988c6f709e8c965d5327",
+      "sourceName": "src/PaymasterCustom.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/account-abstraction/contracts/core/BasePaymaster.sol",
+        "lib/account-abstraction/contracts/interfaces/IAggregator.sol",
+        "lib/account-abstraction/contracts/interfaces/IEntryPoint.sol",
+        "lib/account-abstraction/contracts/interfaces/IPaymaster.sol",
+        "lib/account-abstraction/contracts/interfaces/IStakeManager.sol",
+        "lib/account-abstraction/contracts/interfaces/UserOperation.sol",
+        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol"
+      ],
+      "versionRequirement": "^0.8.19",
+      "artifacts": {
+        "CustomPaymaster": {
+          "0.8.19+commit.7dd6d404.Darwin.appleclang": "PaymasterCustom.sol/CustomPaymaster.json"
+        }
+      }
+    },
     "test/Hackathon1155.t.sol": {
-      "lastModificationDate": 1680477682277,
-      "contentHash": "c4063623d8a252f848abbf2b93b459b0",
+      "lastModificationDate": 1681360146111,
+      "contentHash": "c6c1cb0f6c797f058f3f3b86e8178c32",
       "sourceName": "test/Hackathon1155.t.sol",
       "solcConfig": {
         "settings": {
@@ -1054,7 +1359,7 @@
         "lib/solmate/src/tokens/ERC1155.sol",
         "src/Hackathon1155.sol"
       ],
-      "versionRequirement": "^0.8.13",
+      "versionRequirement": "^0.8.19",
       "artifacts": {
         "Hackathon1155Test": {
           "0.8.19+commit.7dd6d404.Darwin.appleclang": "Hackathon1155.t.sol/Hackathon1155Test.json"
