@@ -1255,10 +1255,10 @@
         }
       }
     },
-    "src/PaymasterCustom.sol": {
-      "lastModificationDate": 1681361680518,
-      "contentHash": "42257e1f40dfd476f95cea9eee6f3a01",
-      "sourceName": "src/PaymasterCustom.sol",
+    "src/HackathonPaymaster.sol": {
+      "lastModificationDate": 1681372052182,
+      "contentHash": "6114eadfc9f26ef61b2120df7403bd86",
+      "sourceName": "src/HackathonPaymaster.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -1299,8 +1299,8 @@
       ],
       "versionRequirement": "^0.8.19",
       "artifacts": {
-        "CustomPaymaster": {
-          "0.8.19+commit.7dd6d404.Darwin.appleclang": "PaymasterCustom.sol/CustomPaymaster.json"
+        "HackathonPaymaster": {
+          "0.8.19+commit.7dd6d404.Darwin.appleclang": "HackathonPaymaster.sol/HackathonPaymaster.json"
         }
       }
     },

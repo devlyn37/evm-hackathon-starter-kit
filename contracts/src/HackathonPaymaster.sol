@@ -9,11 +9,7 @@ import "../lib/account-abstraction/contracts/core/BasePaymaster.sol";
 contract HackathonPaymaster is BasePaymaster {
     using UserOperationLib for UserOperation;
 
-    address public immutable verifyingSigner;
-
-    constructor(IEntryPoint _entryPoint, address _verifyingSigner) BasePaymaster(_entryPoint) {
-        verifyingSigner = _verifyingSigner;
-    }
+    constructor(IEntryPoint _entryPoint) BasePaymaster(_entryPoint) {}
 
     function validatePaymasterUserOp(UserOperation calldata userOp, bytes32 userOpHash, uint256 maxCost)
         external
