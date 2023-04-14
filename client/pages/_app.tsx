@@ -1,28 +1,66 @@
 import { ChakraProvider, Flex, Heading, Text } from "@chakra-ui/react";
 import {
   ConnectButton,
+  RainbowKitProvider,
   connectorsForWallets,
   darkTheme,
   getDefaultWallets,
-  RainbowKitProvider,
 } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import type { AppProps } from "next/app";
 import {
-  mainnet,
-  goerli,
+  WagmiConfig,
   configureChains,
   createClient,
-  WagmiConfig,
+  goerli,
+  mainnet,
 } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
+import {
+  discordWallet,
+  enhanceWalletWithAAConnector,
+  facebookWallet,
+  githubWallet,
+  googleWallet,
+  twitchWallet,
+  twitterWallet,
+} from "@zerodevapp/wagmi/rainbowkit";
+import {
+  metaMaskWallet,
+  walletConnectWallet,
+} from "@rainbow-me/rainbowkit/wallets";
 
-const appName = "EVM Hackathon Starter";
+const projectId = "14507bac-5aad-47ba-8b9a-66d745436246";
 
 const { chains, provider, webSocketProvider } = configureChains(
   [...(process.env.NEXT_PUBLIC_TESTNET === "true" ? [goerli] : [mainnet])],
   [publicProvider()]
 );
+
+const connectors = connectorsForWallets([
+  {
+    groupName: "Social",
+    wallets: [
+      googleWallet({ options: { projectId } }),
+      facebookWallet({ options: { projectId } }),
+      githubWallet({ options: { projectId } }),
+      discordWallet({ options: { projectId } }),
+      twitchWallet({ options: { projectId } }),
+      twitterWallet({ options: { projectId } }),
+    ],
+  },
+  {
+    groupName: "Web3 Wallets (AA-enabled)",
+    wallets: [
+      enhanceWalletWithAAConnector(metaMaskWallet({ chains }), { projectId }),
+      enhanceWalletWithAAConnector(walletConnectWallet({ chains }), {
+        projectId,
+      }),
+    ],
+  },
+]);
+
+const appName = "EVM Hackathon Starter";
 
 const { wallets } = getDefaultWallets({
   appName,
@@ -32,8 +70,6 @@ const { wallets } = getDefaultWallets({
 const demoAppInfo = {
   appName,
 };
-
-const connectors = connectorsForWallets(wallets);
 
 const wagmiClient = createClient({
   autoConnect: true,
