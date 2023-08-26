@@ -1,9 +1,22 @@
+
+
 # .gitignore
 
 # Ignore .env files
 .env
 .env.*
 !.env.example
+
+# Editor and OS specific files
+.idea/
+.vscode/
+.DS_Store
+*.bak
+*.sublime*
+Thumbs.db
+.directory
+
+# Client
 
 # Node modules and dependencies
 **/node_modules/
@@ -32,18 +45,11 @@ lerna-debug.log*
 *.tmp
 *.temp
 
-# Editor and OS specific files
-.idea/
-.vscode/
-.DS_Store
-*.bak
-*.sublime*
-Thumbs.db
-.directory
+# Contracts
 
 # Compiler files
 cache/
-out/
+**/out/
 
 # Ignores development broadcast logs
 !/broadcast
