@@ -8,38 +8,40 @@ import {
 } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import type { AppProps } from "next/app";
+import { createPublicClient, http } from "viem";
 import {
   mainnet,
-  goerli,
+  sepolia,
   configureChains,
-  createClient,
+  createConfig,
   WagmiConfig,
 } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 
-const appName = "EVM Hackathon Starter";
+const PROJECT_NAME = "YOUR HACKATHON PROJECT";
+const APP_NAME = "YOUR HACKATHON APP";
 
-const { chains, provider, webSocketProvider } = configureChains(
-  [...(process.env.NEXT_PUBLIC_TESTNET === "true" ? [goerli] : [mainnet])],
+const { chains, publicClient } = configureChains(
+  [...(process.env.NEXT_PUBLIC_TESTNET === "true" ? [sepolia] : [mainnet])],
   [publicProvider()]
 );
 
 const { wallets } = getDefaultWallets({
-  appName,
+  appName: APP_NAME,
+  projectId: PROJECT_NAME,
   chains,
 });
 
 const demoAppInfo = {
-  appName,
+  appName: APP_NAME,
 };
 
 const connectors = connectorsForWallets(wallets);
 
-const wagmiClient = createClient({
+const config = createConfig({
   autoConnect: true,
+  publicClient,
   connectors,
-  provider,
-  webSocketProvider,
 });
 
 export default function App({
@@ -47,7 +49,7 @@ export default function App({
   pageProps: { ...pageProps },
 }: AppProps<{}>) {
   return (
-    <WagmiConfig client={wagmiClient}>
+    <WagmiConfig config={config}>
       <RainbowKitProvider
         appInfo={demoAppInfo}
         chains={chains}

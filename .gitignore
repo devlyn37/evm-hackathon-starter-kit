@@ -9,7 +9,7 @@
 **/node_modules/
 
 # Next.js build output
-/.next/
+**/.next/
 /out/
 
 # TypeScript build output
