@@ -8,7 +8,6 @@ import {
 } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import type { AppProps } from "next/app";
-import { createPublicClient, http } from "viem";
 import {
   mainnet,
   sepolia,
@@ -17,18 +16,18 @@ import {
   WagmiConfig,
 } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
+import { env } from "../env";
 
-const PROJECT_NAME = "YOUR HACKATHON PROJECT";
 const APP_NAME = "YOUR HACKATHON APP";
 
 const { chains, publicClient } = configureChains(
-  [...(process.env.NEXT_PUBLIC_TESTNET === "true" ? [sepolia] : [mainnet])],
+  [...(env.NEXT_PUBLIC_MAINNET === "true" ? [mainnet] : [sepolia])],
   [publicProvider()]
 );
 
 const { wallets } = getDefaultWallets({
   appName: APP_NAME,
-  projectId: PROJECT_NAME,
+  projectId: env.NEXT_PUBLIC_WC_PROJECT_ID,
   chains,
 });
 
@@ -39,7 +38,7 @@ const demoAppInfo = {
 const connectors = connectorsForWallets(wallets);
 
 const config = createConfig({
-  autoConnect: true,
+  autoConnect: false,
   publicClient,
   connectors,
 });
